@@ -5,8 +5,8 @@ import common.Initialize;
 
 public class TEST extends Initialize {
 
-    @Test( enabled = true )
-    public static void allowPermisson() throws Exception
+    @Test
+    public static void allowPermisson()
     {
         System.out.println("Show up Adds!");
 
