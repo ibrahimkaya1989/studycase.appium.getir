@@ -20,7 +20,7 @@ public class TEST extends Initialize {
 
         System.out.println("Whish list steps just started!");
 
-        //CommonUtils.deneme();
+        CommonUtils.navigateBack();
 
         System.out.println("Processes are done!");
     }
