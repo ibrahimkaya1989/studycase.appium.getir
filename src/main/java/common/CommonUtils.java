@@ -15,24 +15,30 @@ public class CommonUtils extends Initialize {
     }
 
     public static void clickByAccessibilityID(String testObject) {
-
-        MobileElement element = driver.findElementByAccessibilityId(pp.readProperty(testObject, "elements"));
-        element.click();
-
+        try {
+            MobileElement element = driver.findElementByAccessibilityId(pp.readProperty(testObject, "elements"));
+            element.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void clickByID(String testObject) {
-
-        MobileElement element = driver.findElement(By.id(pp.readProperty(testObject, "elements")));
-        element.click();
-
+        try {
+            MobileElement element = driver.findElement(By.id(pp.readProperty(testObject, "elements")));
+            element.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void clickByXPath(String testObject) {
-
-        MobileElement element = driver.findElementByXPath(pp.readProperty(testObject, "elements"));
-        element.click();
-
+        try {
+            MobileElement element = driver.findElementByXPath(pp.readProperty(testObject, "elements"));
+            element.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static String getTextById(String testObject) {
@@ -50,40 +56,50 @@ public class CommonUtils extends Initialize {
     }
 
     public static void randomClickByXPath(String testObject) {
-
-        Random random = new Random();
-        List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
-        element.get(random.nextInt(element.size())).click();
-
+        try {
+            Random random = new Random();
+            List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
+            element.get(random.nextInt(element.size())).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void removeProductList(String testObject) throws Exception {
-
-        List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
-
-        for (int i = element.size() - 1; i >= 0; i--) {
-            element.get(i).click();
-            Thread.sleep(1000);
+    public static void removeProductList(String testObject) {
+        try {
+            List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
+            for (int i = element.size() - 1; i >= 0; i--) {
+                element.get(i).click();
+                Thread.sleep(1000);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public static void listCategories(String testObject) throws Exception {
+        try {
+            List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
 
-        List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
+            for (int i = 0; i < 5; i++) {
+                System.out.println(i + ". " + element.get(i).getText());
+            }
 
-        for (int i = 0 ; i < 5; i++) {
-            System.out.println(i + ". " + element.get(i).getText());
+            Random random = new Random();
+            element.get(random.nextInt(element.size())).click();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        Random random = new Random();
-        element.get(random.nextInt(element.size())).click();
     }
 
     public static void randomCategory(String testObject) throws Exception {
+        try {
+            List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
 
-        List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
-
-        Random random = new Random();
-        element.get(random.nextInt(5)).click();
+            Random random = new Random();
+            element.get(random.nextInt(5)).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

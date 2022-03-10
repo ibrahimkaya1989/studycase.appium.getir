@@ -1,12 +1,9 @@
 package common;
 
-import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import io.appium.java_client.MobileElement;
@@ -18,13 +15,11 @@ public class Initialize {
     private static ProjectProperties pp = new ProjectProperties();
 
     @BeforeTest
-    public void getDriver() throws Exception
-    {
+    public void getDriver() throws Exception {
         driver = initializeDriver();
     }
 
-    public static AndroidDriver<MobileElement> initializeDriver() throws Exception
-    {
+    public static AndroidDriver<MobileElement> initializeDriver() throws Exception {
         driver = new AndroidDriver<MobileElement>(GetDriverInfo.getURL(), GetDriverInfo.Android());
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -32,8 +27,7 @@ public class Initialize {
     }
 
     @AfterTest
-    public void tearDown()
-    {
+    public void tearDown() {
         driver.closeApp();
     }
 }

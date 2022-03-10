@@ -13,7 +13,7 @@ public class GetDriverInfo {
 
     private static ProjectProperties pp = new ProjectProperties();
 
-    public static AppiumDriver<MobileElement> getDriver() throws MalformedURLException{
+    public static AppiumDriver<MobileElement> getDriver() throws MalformedURLException {
 
         AppiumDriver<MobileElement> driver;
 
@@ -22,7 +22,7 @@ public class GetDriverInfo {
         return driver;
     }
 
-    public static AppiumDriver<MobileElement> getAndroidDriver() throws MalformedURLException{
+    public static AppiumDriver<MobileElement> getAndroidDriver() throws MalformedURLException {
 
         AppiumDriver<MobileElement> driver;
 
@@ -31,7 +31,7 @@ public class GetDriverInfo {
         return driver;
     }
 
-    public static AppiumDriver<MobileElement> getIOSDriver() throws MalformedURLException{
+    public static AppiumDriver<MobileElement> getIOSDriver() throws MalformedURLException {
 
         AppiumDriver<MobileElement> driver;
 

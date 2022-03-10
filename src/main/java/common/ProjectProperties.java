@@ -10,7 +10,7 @@ public class ProjectProperties {
 
         Properties prop = new Properties();
         InputStream input = null;
-        String propValue="";
+        String propValue = "";
         try {
 
             input = getClass().getClassLoader().getResourceAsStream(source + ".properties");
@@ -19,7 +19,7 @@ public class ProjectProperties {
             prop.load(input);
 
             // get the property value
-            propValue=prop.getProperty(key);
+            propValue = prop.getProperty(key);
 
         } catch (IOException ex) {
             ex.printStackTrace();
