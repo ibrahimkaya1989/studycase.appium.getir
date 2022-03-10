@@ -1,5 +1,6 @@
 package common;
 
+import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -14,7 +15,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class Initialize {
     protected static AndroidDriver<MobileElement> driver = null;
     protected static DesiredCapabilities cap = null;
-    //private static ProjectProperties pp = new ProjectProperties();
+    private static ProjectProperties pp = new ProjectProperties();
 
     @BeforeTest
     public void getDriver() throws Exception
@@ -33,6 +34,6 @@ public class Initialize {
     @AfterTest
     public void tearDown()
     {
-
+        driver.closeApp();
     }
 }

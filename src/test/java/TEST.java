@@ -9,19 +9,15 @@ public class TEST extends Initialize {
     public static void allowPermisson()
     {
         System.out.println("Show up Adds!");
-
         CommonUtils.clickByID("case1.skipBtn.id");
-
         System.out.println("Skip Adds");
     }
 
     @Test (dependsOnMethods = "allowPermisson")
-    public void testgetir_add_to_wishlist() {
-
-        System.out.println("Whish list steps just started!");
-
-        CommonUtils.navigateBack();
-
-        System.out.println("Processes are done!");
+    public void openMenu() {
+        CommonUtils.getTextByXPath("case1.mainPageTitle.XPath");
+        System.out.println("Mainpage title is found!");
+        CommonUtils.clickByXPath("case1.menu.XPath");
+        System.out.println("Menu button is clicked!");
     }
 }
