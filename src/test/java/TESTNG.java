@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 import common.CommonUtils;
 import common.Initialize;
 
-public class TEST extends Initialize {
+public class TESTNG extends Initialize {
 
     @Test
     public static void allowPermisson() {
