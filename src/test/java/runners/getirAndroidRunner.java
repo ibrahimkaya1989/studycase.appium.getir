@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import common.CommonUtils;
 import common.Initialize;
 
-public class GetirAndroidRunner extends Initialize {
+public class getirAndroidRunner extends Initialize {
 
     @Test
     public static void allowPermisson() {

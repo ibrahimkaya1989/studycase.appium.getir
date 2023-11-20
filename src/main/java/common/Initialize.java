@@ -17,7 +17,7 @@ public class Initialize {
     }
 
     public static AndroidDriver<MobileElement> initializeDriver() throws Exception {
-        driver = new AndroidDriver<MobileElement>(GetDriverInfo.getURL(), GetDriverInfo.Android());
+        driver = new AndroidDriver<>(GetDriverInfo.getURL(), GetDriverInfo.Android());
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         return driver;

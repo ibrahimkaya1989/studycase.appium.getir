@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import io.appium.java_client.MobileElement;
 
 public class CommonUtils extends Initialize {
-    private static ProjectProperties pp = new ProjectProperties();
+    private static final ProjectProperties pp = new ProjectProperties();
 
     public static void navigateBack() {
         driver.navigate().back();
@@ -43,15 +43,13 @@ public class CommonUtils extends Initialize {
 
     public static String getTextById(String testObject) {
 
-        String text = driver.findElementById(pp.readProperty(testObject, "elements")).getText();
-        return text;
+        return driver.findElementById(pp.readProperty(testObject, "elements")).getText();
 
     }
 
     public static String getTextByXPath(String testObject) {
 
-        String text = driver.findElementByXPath(pp.readProperty(testObject, "elements")).getText();
-        return text;
+        return driver.findElementByXPath(pp.readProperty(testObject, "elements")).getText();
 
     }
 
@@ -77,7 +75,7 @@ public class CommonUtils extends Initialize {
         }
     }
 
-    public static void listCategories(String testObject) throws Exception {
+    public static void listCategories(String testObject) {
         try {
             List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
 
@@ -92,7 +90,7 @@ public class CommonUtils extends Initialize {
         }
     }
 
-    public static void randomCategory(String testObject) throws Exception {
+    public static void randomCategory(String testObject) {
         try {
             List<MobileElement> element = driver.findElementsByXPath(pp.readProperty(testObject, "elements"));
 

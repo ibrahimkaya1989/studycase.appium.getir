@@ -11,13 +11,13 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class GetDriverInfo {
 
-    private static ProjectProperties pp = new ProjectProperties();
+    private static final ProjectProperties pp = new ProjectProperties();
 
     public static AppiumDriver<MobileElement> getDriver() throws MalformedURLException {
 
         AppiumDriver<MobileElement> driver;
 
-        driver = new AppiumDriver<MobileElement>(getURL(), Android());
+        driver = new AppiumDriver<>(getURL(), Android());
 
         return driver;
     }
@@ -26,7 +26,7 @@ public class GetDriverInfo {
 
         AppiumDriver<MobileElement> driver;
 
-        driver = new AndroidDriver<MobileElement>(getURL(), Android());
+        driver = new AndroidDriver<>(getURL(), Android());
 
         return driver;
     }
@@ -35,7 +35,7 @@ public class GetDriverInfo {
 
         AppiumDriver<MobileElement> driver;
 
-        driver = new AppiumDriver<MobileElement>(getURL(), Android());
+        driver = new AppiumDriver<>(getURL(), Android());
 
         return driver;
     }
@@ -82,8 +82,7 @@ public class GetDriverInfo {
     }
 
     public static URL getURL() throws MalformedURLException {
-        URL url = new URL("http://127.0.0.1:4723/wd/hub");
 
-        return url;
+        return new URL("http://127.0.0.1:4723/wd/hub");
     }
 }
