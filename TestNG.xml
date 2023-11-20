@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Suite" parallel="methods" thread-count="10" verbose="1" >
-    <test name="TESTNG Testing" >
+<suite name="Suite" parallel="methods" thread-count="1" >
+    <test name="runners.GetirAndroidRunner Testing" >
         <classes>
-            <class name="TESTNG"/>
+            <class name="runners.GetirAndroidRunner"/>
         </classes>
     </test>
 </suite>

@@ -1,9 +1,11 @@
+package runners;
+
 import org.testng.annotations.Test;
 
 import common.CommonUtils;
 import common.Initialize;
 
-public class TESTNG extends Initialize {
+public class GetirAndroidRunner extends Initialize {
 
     @Test
     public static void allowPermisson() {

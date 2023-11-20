@@ -47,7 +47,7 @@ public class GetDriverInfo {
         // Smartphone Infos
 
         cap.setCapability("deviceName", pp.readProperty("android.deviceName", "test"));
-        cap.setCapability("udid", pp.readProperty("android.udid", "test"));
+        cap.setCapability("udid", pp.readProperty("android.udid.ip", "test"));
         //cap.setCapability("udid", pp.readProperty("android.udid.ip", "test"));
         cap.setCapability("platformName", pp.readProperty("android.platformName", "test"));
         cap.setCapability("platformVersion", pp.readProperty("android.platformVersion", "test"));
